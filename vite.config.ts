@@ -25,6 +25,7 @@ export default defineConfig({
   plugins: [
     dts({
       outputDir: "types",
+      exclude: ["src/*.spec.ts", "src/*.spec.ts.snap"],
       staticImport: true,
       insertTypesEntry: true,
     }),
