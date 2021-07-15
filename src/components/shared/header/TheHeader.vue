@@ -37,9 +37,6 @@ import { isMobile } from "@/helpers/utils";
 import { optimizedResizeEvent } from "@/helpers/optimizedResizeEvent";
 
 export default defineComponent({
-  props: {
-    name: Symbol,
-  },
   components: {
     TheHeaderNav,
     TheHeaderNavMobile,

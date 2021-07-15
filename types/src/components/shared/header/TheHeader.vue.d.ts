@@ -1,13 +1,7 @@
-import type { DefineComponent, Ref, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
-declare const _default: DefineComponent<{
-    name: SymbolConstructor;
-}, {
+import type { DefineComponent, Ref, ComponentOptionsMixin, EmitsOptions, VNodeProps, AllowedComponentProps, ComponentCustomProps } from 'vue';
+declare const _default: DefineComponent<{}, {
     mobile: Ref<boolean>;
     header: Ref<HTMLElement>;
     close: typeof close;
-}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, Record<string, any>, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<{
-    name?: unknown;
-} & {} & {
-    name?: symbol | undefined;
-}>, {}>;
+}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, EmitsOptions, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<{} & {} & {}>, {}>;
 export default _default;
