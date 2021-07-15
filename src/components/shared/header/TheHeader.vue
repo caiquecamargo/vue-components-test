@@ -29,12 +29,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, ref } from "vue";
 import TheHeaderNav from "./TheHeaderNav.vue";
 import TheHeaderNavMobile from "./TheHeaderNavMobile.vue";
-import { injectStrict, isMobile } from "../../../helpers/utils";
+import { isMobile } from "@/helpers/utils";
 import { HeaderObserverKey } from "./controllers/HeaderObserver";
-import { optimizedResizeEvent } from "../../../helpers/optimizedResizeEvent";
+import { optimizedResizeEvent } from "@/helpers/optimizedResizeEvent";
 
 export default defineComponent({
   props: {
@@ -46,7 +46,6 @@ export default defineComponent({
   },
   setup(props) {
     const header = ref(null as unknown as HTMLElement);
-    // const headerObserver = injectStrict(HeaderObserverKey);
     const mobile = ref(true);
 
     console.log(
@@ -62,10 +61,6 @@ export default defineComponent({
     isInMobile();
 
     optimizedResizeEvent.add(isInMobile);
-
-    // onMounted(() => {
-    //   headerObserver.element = header.value;
-    // });
 
     return {
       mobile,
