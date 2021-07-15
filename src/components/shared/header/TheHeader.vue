@@ -33,7 +33,7 @@ import { defineComponent, ref } from "vue";
 import TheHeaderNav from "./TheHeaderNav.vue";
 import TheHeaderNavMobile from "./TheHeaderNavMobile.vue";
 import { isMobile } from "@/helpers/utils";
-import { HeaderObserverKey } from "./controllers/HeaderObserver";
+// import { HeaderObserverKey } from "./controllers/HeaderObserver";
 import { optimizedResizeEvent } from "@/helpers/optimizedResizeEvent";
 
 export default defineComponent({
@@ -48,12 +48,12 @@ export default defineComponent({
     const header = ref(null as unknown as HTMLElement);
     const mobile = ref(true);
 
-    console.log(
-      "name: ",
-      props.name,
-      HeaderObserverKey,
-      HeaderObserverKey === props.name
-    );
+    // console.log(
+    //   "name: ",
+    //   props.name,
+    //   HeaderObserverKey,
+    //   HeaderObserverKey === props.name
+    // );
 
     const isInMobile = () => {
       mobile.value = isMobile();
