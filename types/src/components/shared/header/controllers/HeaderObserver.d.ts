@@ -1,5 +1,5 @@
+import { Observer } from '../../../../controllers/Observer';
 import { InjectionKey } from "@vue/runtime-core";
-import { Observer } from "../../../../controllers/Observer";
 export declare const HeaderObserverKey: InjectionKey<HeaderObserver>;
 export declare class HeaderObserver extends Observer {
     private _element?;

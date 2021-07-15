@@ -1,5 +1,5 @@
+import { Observer } from "@/controllers/Observer";
 import { InjectionKey } from "@vue/runtime-core";
-import { Observer } from "../../../../controllers/Observer";
 
 const CLASS = "off-top";
 const THRESHOLD = 0.7;

@@ -3,6 +3,8 @@
     ref="header"
     class="
       fixed
+      top-0
+      left-0
       z-50
       flex
       justify-between
@@ -13,8 +15,7 @@
       transition
       lg:h-16
       duration-450
-      lg:px-5
-      lg:py-3
+      lg:px-5 lg:py-3
     "
   >
     <slot name="logo" />
@@ -36,14 +37,24 @@ import { HeaderObserverKey } from "./controllers/HeaderObserver";
 import { optimizedResizeEvent } from "../../../helpers/optimizedResizeEvent";
 
 export default defineComponent({
+  props: {
+    name: Symbol,
+  },
   components: {
     TheHeaderNav,
     TheHeaderNavMobile,
   },
-  setup() {
+  setup(props) {
     const header = ref(null as unknown as HTMLElement);
     const headerObserver = injectStrict(HeaderObserverKey);
     const mobile = ref(true);
+
+    console.log(
+      "name: ",
+      props.name,
+      headerObserver.name,
+      headerObserver.name === props.name
+    );
 
     const isInMobile = () => {
       mobile.value = isMobile();
@@ -65,7 +76,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .off-top {
   @apply duration-450 bg-black bg-opacity-50;
 }
