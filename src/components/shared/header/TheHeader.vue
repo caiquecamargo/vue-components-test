@@ -46,14 +46,14 @@ export default defineComponent({
   },
   setup(props) {
     const header = ref(null as unknown as HTMLElement);
-    const headerObserver = injectStrict(HeaderObserverKey);
+    // const headerObserver = injectStrict(HeaderObserverKey);
     const mobile = ref(true);
 
     console.log(
       "name: ",
       props.name,
-      headerObserver.name,
-      headerObserver.name === props.name
+      HeaderObserverKey,
+      HeaderObserverKey === props.name
     );
 
     const isInMobile = () => {
@@ -63,9 +63,9 @@ export default defineComponent({
 
     optimizedResizeEvent.add(isInMobile);
 
-    onMounted(() => {
-      headerObserver.element = header.value;
-    });
+    // onMounted(() => {
+    //   headerObserver.element = header.value;
+    // });
 
     return {
       mobile,
