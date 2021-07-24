@@ -53,7 +53,6 @@ export { AnimationFloatController } from "./components/shared/button/controllers
 export { AnimeFloatButton } from "./components/shared/button/controllers/AnimeFloatButton";
 export { AnimeSandwich } from "./components/shared/button/controllers/AnimeSandwich";
 export { ElementObserver, elementObserverKey, } from "./components/shared/container/controller/elementObserver";
-export { HeaderObserver, HeaderObserverKey, } from "./components/shared/header/controllers/HeaderObserver";
 export { PageLoaderAnime } from "./components/shared/loaders/controllers/pageLoaderAnime";
 export { TextLoaderAnime } from "./components/shared/loaders/controllers/textLoaderAnime";
 export { AnimeMenu } from "./components/shared/menu/controllers/AnimeMenu";
@@ -67,6 +66,7 @@ export { Observer } from "./controllers/Observer";
 export { Provider } from "./controllers/Provider";
 export { default as errors, forbidenError } from "./helpers/errorMessages";
 export { optimizedResizeEvent } from "./helpers/optimizedResizeEvent";
+export { optimizedScrollEvent } from "./helpers/optimizedScrollEvent";
 export { getElement, getGridColumnsQty, injectStrict, isMobile, isOdd, madeOddArray, numberToReal, onClickOutside, } from "./helpers/utils";
 declare function install(Vue: App): void;
 export default install;

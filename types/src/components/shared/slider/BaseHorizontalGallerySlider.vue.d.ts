@@ -4,9 +4,6 @@ declare const _default: DefineComponent<{
     visibleElements: {
         type: NumberConstructor;
     };
-    resizeEvent: {
-        type: ObjectConstructor;
-    };
 }, {
     container: Ref<HTMLElement | undefined>;
     turn: (to: SliderType) => void;
@@ -16,9 +13,7 @@ declare const _default: DefineComponent<{
     enableControllers: Ref<boolean>;
 }, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, Record<string, any>, string, VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<{
     visibleElements?: unknown;
-    resizeEvent?: unknown;
 } & {} & {
     visibleElements?: number | undefined;
-    resizeEvent?: Record<string, any> | undefined;
 }>, {}>;
 export default _default;
