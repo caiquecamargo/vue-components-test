@@ -8,7 +8,7 @@ exports[`BaseHorizontalSlider component test should swap position when touch the
       h-full
       grid-cols-1
       lg:grid-cols-slider
-    \\"><span class=\\"
+    \\" resizeevent=\\"[object Object]\\"><span class=\\"
         left-0
         hidden
         cursor-pointer

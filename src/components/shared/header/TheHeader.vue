@@ -29,33 +29,51 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import TheHeaderNav from "./TheHeaderNav.vue";
 import TheHeaderNavMobile from "./TheHeaderNavMobile.vue";
 import { isMobile } from "@/helpers/utils";
-// import { HeaderObserverKey } from "./controllers/HeaderObserver";
 import { optimizedResizeEvent } from "@/helpers/optimizedResizeEvent";
+import { optimizedScrollEvent } from "@/helpers/optimizedScrollEvent";
 
 export default defineComponent({
   components: {
     TheHeaderNav,
     TheHeaderNavMobile,
   },
+  props: {
+    changeWhenOffTop: {
+      type: Boolean,
+      default: true,
+    },
+    offTopSize: {
+      type: Number,
+      default: 200,
+    },
+    offTopClass: {
+      type: String,
+      default: "off-top",
+    },
+  },
   setup(props) {
     const header = ref(null as unknown as HTMLElement);
     const mobile = ref(true);
-
-    // console.log(
-    //   "name: ",
-    //   props.name,
-    //   HeaderObserverKey,
-    //   HeaderObserverKey === props.name
-    // );
 
     const isInMobile = () => {
       mobile.value = isMobile();
     };
     isInMobile();
+
+    const isOffTop = (scroll: number) => {
+      if (scroll >= props.offTopSize)
+        header.value.classList.add(props.offTopClass);
+      else header.value.classList.remove(props.offTopClass);
+    };
+
+    onMounted(() => {
+      if (props.changeWhenOffTop) optimizedScrollEvent.add(isOffTop);
+      else header.value.classList.add(props.offTopClass);
+    });
 
     optimizedResizeEvent.add(isInMobile);
 
@@ -63,6 +81,7 @@ export default defineComponent({
       mobile,
       header,
       close,
+      isOffTop,
     };
   },
 });

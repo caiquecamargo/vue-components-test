@@ -8,7 +8,6 @@
 <script lang="ts">
 import { defineComponent, onMounted, PropType, ref } from "vue";
 import { ISrcset } from "../image/model/ISrcset";
-import { HeaderObserverKey } from "../header/controllers/HeaderObserver";
 import TheImageBackground from "../image/TheImageBackground.vue";
 import { injectStrict } from "../../../helpers/utils";
 
@@ -25,11 +24,6 @@ export default defineComponent({
   },
   setup() {
     const banner = ref(null as unknown as HTMLElement);
-    const headerObserver = injectStrict(HeaderObserverKey);
-
-    onMounted(() => {
-      headerObserver.observe(banner.value);
-    });
 
     return {
       banner,

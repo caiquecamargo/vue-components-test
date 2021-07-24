@@ -7,7 +7,10 @@
     "serve": "vite preview",
     "test": "jest src",
     "test:dev": "jest --coverage --watch src",
-    "test:coverage": "jest --coverage src"
+    "test:coverage": "jest --coverage src",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish"
   },
   "dependencies": {
     "sass": "^1.35.2",

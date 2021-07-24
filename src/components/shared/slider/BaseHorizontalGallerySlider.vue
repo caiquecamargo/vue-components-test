@@ -66,6 +66,7 @@ import { HorizontalGallerySliderController } from "./controller/HorizontalGaller
 import ArrowIcon from "../../svg/ArrowIcon.vue";
 import { SliderType } from "./controller/HorizontalSlider";
 import { getElement } from "../../../helpers/utils";
+import { optimizedResizeEvent } from "@/helpers/optimizedResizeEvent";
 
 export default defineComponent({
   components: {
@@ -74,9 +75,6 @@ export default defineComponent({
   props: {
     visibleElements: {
       type: Number,
-    },
-    resizeEvent: {
-      type: Object,
     },
   },
   setup(props) {
@@ -112,11 +110,11 @@ export default defineComponent({
       createItems();
     };
 
+    optimizedResizeEvent.add(init);
+
     onMounted(() => {
       init();
     });
-
-    props.resizeEvent?.add(createItems);
 
     let startPositionX = 0;
     let endPositionX = 0;

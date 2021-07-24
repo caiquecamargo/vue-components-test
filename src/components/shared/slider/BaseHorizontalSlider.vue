@@ -72,6 +72,7 @@ import { HorizontalSliderController } from "./controller/HorizontalSliderControl
 import ArrowIcon from "../../svg/ArrowIcon.vue";
 import { SliderType } from "./controller/HorizontalSlider";
 import { getElement } from "../../../helpers/utils";
+import { optimizedResizeEvent } from "@/helpers/optimizedResizeEvent";
 
 export default defineComponent({
   components: {
@@ -108,6 +109,8 @@ export default defineComponent({
     onMounted(() => {
       createItems();
     });
+
+    optimizedResizeEvent.add(createItems);
 
     let startPositionX = 0;
     let endPositionX = 0;

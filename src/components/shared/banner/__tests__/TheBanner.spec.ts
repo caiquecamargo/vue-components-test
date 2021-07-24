@@ -1,19 +1,11 @@
 import { config, mount } from "@vue/test-utils";
 import { mockWindowIntersectionObserver } from "../../../../__mocks__/window.mock";
-import {
-  HeaderObserver,
-  HeaderObserverKey,
-} from "../../header/controllers/HeaderObserver";
 import { ISrcset } from "../../image/model/ISrcset";
 import TheBanner from "../TheBanner.vue";
 
 describe("TheBanner.vue", () => {
-  let headerObserver: HeaderObserver;
-
   beforeEach(() => {
     mockWindowIntersectionObserver();
-
-    headerObserver = new HeaderObserver();
   });
 
   beforeAll(() => {
@@ -35,11 +27,6 @@ describe("TheBanner.vue", () => {
     const wrapper = mount(TheBanner, {
       props: {
         srcset: srcset,
-      },
-      global: {
-        provide: {
-          [HeaderObserverKey as symbol]: headerObserver,
-        },
       },
     });
 

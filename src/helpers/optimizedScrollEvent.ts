@@ -8,7 +8,7 @@ class OptimizedScrollEvent {
   }
 
   private runCallbacks() {
-    this.callbacks.forEach((callback) => callback());
+    this.callbacks.forEach((callback) => callback(window.scrollY));
     this.running = false;
   }
 

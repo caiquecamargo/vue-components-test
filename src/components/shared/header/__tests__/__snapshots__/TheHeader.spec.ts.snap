@@ -3,6 +3,8 @@
 exports[`TheHeader suit test should render the component with this default state 1`] = `
 "<header class=\\"
       fixed
+      top-0
+      left-0
       z-50
       flex
       justify-between
@@ -13,8 +15,7 @@ exports[`TheHeader suit test should render the component with this default state
       transition
       lg:h-16
       duration-450
-      lg:px-5
-      lg:py-3
+      lg:px-5 lg:py-3
     \\">
   <the-header-nav-mobile-stub></the-header-nav-mobile-stub>
 </header>"

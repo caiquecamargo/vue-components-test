@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BaseHorizontalGallerySlider component test should swap position when touch the screen. 1`] = `
-"<section class=\\"grid items-center justify-center grid-cols-1 lg:grid-cols-slider\\"><span class=\\"
+"<section class=\\"grid items-center justify-center grid-cols-1 lg:grid-cols-slider\\" resizeevent=\\"[object Object]\\"><span class=\\"
         left-0
         hidden
         cursor-pointer
