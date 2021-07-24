@@ -8,11 +8,10 @@
     "test": "jest src",
     "test:dev": "jest --coverage --watch src",
     "test:coverage": "jest --coverage src",
-    "prepackage": "npm run build",
-    "package:patch": "npm version patch",
-    "package:minor": "npm version minor",
-    "package:major": "npm version major",
-    "postpackage": "npm publish"
+    "package": "npm run build && npm publish",
+    "package:patch": "npm run build && npm version patch && npm publish",
+    "package:minor": "npm run build && npm version minor && npm publish",
+    "package:major": "npm run build && npm version major && npm publish"
   },
   "dependencies": {
     "sass": "^1.35.2",
@@ -33,8 +32,9 @@
     }
   },
   "files": [
-    "dist",
-    "types"
+    "dist/*",
+    "dist/*.css",
+    "types/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.1.6",
